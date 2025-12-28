@@ -1,0 +1,34 @@
+all:
+  hosts:
+    machine1:
+      ansible_host: node1
+      ansible_user: node1
+      ansible_connection: ssh
+      ansible_ssh_pass: node1
+    machine2:
+      ansible_host: node2
+      ansible_user: node2
+      ansible_connection: ssh
+      ansible_ssh_pass: node2
+    machine3:
+      ansible_host: node3
+      ansible_user: node3
+      ansible_connection: ssh
+      ansible_ssh_pass: node3
+
+    machine4:
+      ansible_host: centosnode1
+      ansible_user: frank
+      ansible_connection: ssh
+      ansible_ssh_pass: frank-centos
+  children:
+    web:
+      hosts:
+        machine1:
+    storage:
+      hosts:
+        machine2:
+        machine3:
+    redhathost:
+      hosts:
+        machine4:
