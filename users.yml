@@ -1,0 +1,17 @@
+- name: Create multiple users at once
+  hosts: web
+  become: yes
+  tasks:
+    - name: Create users
+      ansible.builtin.user:
+        name: "{{ item.name }}"
+        password: "{{ item.password }}"
+        create_home: yes
+        shell: /bin/bash
+        update_password: always
+      loop:
+        - { name: armel, password: "{{ 'armeltest' | password_hash('sha512', 'secretsalt') }}" }
+        - { name: ulrich, password: "{{ 'ulrichtest' | password_hash('sha512', 'secretsalt') }}" }
+        - { name: honorine, password: "{{ 'honorinetest' | password_hash('sha512', 'secretsalt') }}" }
+        - { name: nasser, password: "{{ 'nassertest' | password_hash('sha512', 'secretsalt') }}" }
+        

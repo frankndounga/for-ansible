@@ -18,6 +18,6 @@ very useful to see all the configuration tree
 ## i try a basic playbook to install nginx on debian base hosts and redhat base hosts just to see if everything work well
 this is the play.yml file
 
-## As i have a small task to do with the command sed with the /etc/passwd file i will start by using the module user to create multiple users as well as also directly see the syntax for using loops in a playbook
+## As i have a small task to do with the command sed with the /etc/passwd file i will start by using the module user to create multiple users as well as also directly see the syntax for using loops in a playbook. we directly specify the password here but as i sais i am not using ansible vault at the moment. then i hashed the password directly in the playbook.
 
 
